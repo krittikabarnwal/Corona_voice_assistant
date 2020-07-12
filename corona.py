@@ -102,11 +102,11 @@ def main():
 	country_list = set(data.get_list_of_countries()) 
 
 	TOTAL_PATTERNS = {
-					re.compile("total [\w\s]+ cases [\w\s]"):data.get_total_cases,
-					re.compile("[\w\s]+ total cases [\w\s]"): data.get_total_cases,
-                    re.compile("total [\w\s]+ deaths [\w\s]"): data.get_total_death,
-                    re.compile("total [\w\s]+ death [\w\s]"): data.get_total_death,
-                    re.compile("total deaths [\w\s]"): data.get_total_death
+			re.compile("total [\w\s]+ cases [\w\s]"):data.get_total_cases,
+			re.compile("[\w\s]+ total cases [\w\s]"): data.get_total_cases,
+			re.compile("total [\w\s]+ deaths [\w\s]"): data.get_total_death,
+			re.compile("total [\w\s]+ death [\w\s]"): data.get_total_death,
+			re.compile("total deaths [\w\s]"): data.get_total_death
 					}
 	
 
@@ -114,10 +114,9 @@ def main():
 	                re.compile("[\w\s]+ new [\w\s]+"): lambda country: data.get_country_data(country)['new_cases'],
 	                re.compile("[\w\s]+ active [\w\s]+"): lambda country: data.get_country_data(country)['active_cases'],
 	                re.compile("[\w\s]+ recovered [\w\s]+"): lambda country: data.get_country_data(country)['recovered'],
-                    re.compile("[\w\s]+ deaths [\w\s]+"): lambda country: data.get_country_data(country)['total_death'],
-                    re.compile("[\w\s]+ death [\w\s]+"): lambda country: data.get_country_data(country)['total_death'],
-					re.compile("[\w\s]+ cases [\w\s]+"): lambda country: data.get_country_data(country)['total_cases'],
-
+			re.compile("[\w\s]+ deaths [\w\s]+"): lambda country: data.get_country_data(country)['total_death'],
+			re.compile("[\w\s]+ death [\w\s]+"): lambda country: data.get_country_data(country)['total_death'],
+			re.compile("[\w\s]+ cases [\w\s]+"): lambda country: data.get_country_data(country)['total_cases'],
 					}
 	
 
